@@ -1,17 +1,19 @@
 local ScreenGui = Instance.new("ScreenGui")
 local Frame = Instance.new("ImageLabel")
 local ScrollingFrame = Instance.new("ScrollingFrame")
-local Noclip = Instance.new("TextButton")
-local Speed = Instance.new("TextButton")
-local Jump = Instance.new("TextButton")
-local TpClick = Instance.new("TextButton")
-local Goto = Instance.new("TextButton")
+local noclip = Instance.new("TextButton")
+local walkspeed = Instance.new("TextButton")
+local jumppower = Instance.new("TextButton")
+local clicktp = Instance.new("TextButton")
+local tpto = Instance.new("TextButton")
 local TextLabel = Instance.new("TextLabel")
-local KillAll = Instance.new("TextButton")
+local infjump = Instance.new("TextButton")
+local btools = Instance.new("TextButton")
+local fly = Instance.new("TextButton")
 
 --Properties:
 
-ScreenGui.Parent = game.Workspace
+ScreenGui.Parent = game.CoreGui
 
 Frame.Name = "Frame"
 Frame.Parent = ScreenGui
@@ -24,6 +26,8 @@ Frame.ImageColor3 = Color3.fromRGB(47, 47, 47)
 Frame.ScaleType = Enum.ScaleType.Slice
 Frame.SliceCenter = Rect.new(100, 100, 100, 100)
 Frame.SliceScale = 0.167
+Frame.Active = true
+Frame.Draggable = true
 
 ScrollingFrame.Parent = Frame
 ScrollingFrame.Active = true
@@ -31,65 +35,80 @@ ScrollingFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 ScrollingFrame.BackgroundTransparency = 1.000
 ScrollingFrame.Size = UDim2.new(0, 182, 0, 165)
 
-Noclip.Name = "Noclip"
-Noclip.Parent = ScrollingFrame
-Noclip.BackgroundColor3 = Color3.fromRGB(89, 89, 89)
-Noclip.Position = UDim2.new(0, 0, 0.142424256, 0)
-Noclip.Size = UDim2.new(0, 172, 0, 26)
-Noclip.Font = Enum.Font.SciFi
-Noclip.Text = "Noclip"
-Noclip.TextColor3 = Color3.fromRGB(3, 54, 165)
-Noclip.TextScaled = true
-Noclip.TextSize = 14.000
-Noclip.TextWrapped = true
+noclip.Name = "noclip"
+noclip.Parent = ScrollingFrame
+noclip.BackgroundColor3 = Color3.fromRGB(89, 89, 89)
+noclip.Position = UDim2.new(0, 0, 0.142424256, 0)
+noclip.Size = UDim2.new(0, 172, 0, 26)
+noclip.Font = Enum.Font.SciFi
+noclip.Text = "Noclip"
+noclip.TextColor3 = Color3.fromRGB(3, 54, 165)
+noclip.TextScaled = true
+noclip.TextSize = 14.000
+noclip.TextWrapped = true
+noclip.MouseButton1Down:connect (function()
+	print("Disable on the version V1.0.1.")
+end)
 
-Speed.Name = "Speed"
-Speed.Parent = ScrollingFrame
-Speed.BackgroundColor3 = Color3.fromRGB(89, 89, 89)
-Speed.Position = UDim2.new(0, 0, 0.221212134, 0)
-Speed.Size = UDim2.new(0, 172, 0, 26)
-Speed.Font = Enum.Font.SciFi
-Speed.Text = "Speed"
-Speed.TextColor3 = Color3.fromRGB(3, 54, 165)
-Speed.TextScaled = true
-Speed.TextSize = 14.000
-Speed.TextWrapped = true
+walkspeed.Name = "walkspeed"
+walkspeed.Parent = ScrollingFrame
+walkspeed.BackgroundColor3 = Color3.fromRGB(89, 89, 89)
+walkspeed.Position = UDim2.new(0, 0, 0.221212134, 0)
+walkspeed.Size = UDim2.new(0, 172, 0, 26)
+walkspeed.Font = Enum.Font.SciFi
+walkspeed.Text = "Speed Power"
+walkspeed.TextColor3 = Color3.fromRGB(3, 54, 165)
+walkspeed.TextScaled = true
+walkspeed.TextSize = 14.000
+walkspeed.TextWrapped = true
+walkspeed.MouseButton1Down:connect (function()
+	print("Disable on the version V1.0.1.")
+end)
 
-Jump.Name = "Jump"
-Jump.Parent = ScrollingFrame
-Jump.BackgroundColor3 = Color3.fromRGB(89, 89, 89)
-Jump.Position = UDim2.new(0, 0, 0.300000012, 0)
-Jump.Size = UDim2.new(0, 172, 0, 26)
-Jump.Font = Enum.Font.SciFi
-Jump.Text = "Jump"
-Jump.TextColor3 = Color3.fromRGB(3, 54, 165)
-Jump.TextScaled = true
-Jump.TextSize = 14.000
-Jump.TextWrapped = true
+jumppower.Name = "jumppower"
+jumppower.Parent = ScrollingFrame
+jumppower.BackgroundColor3 = Color3.fromRGB(89, 89, 89)
+jumppower.Position = UDim2.new(0, 0, 0.300000012, 0)
+jumppower.Size = UDim2.new(0, 172, 0, 26)
+jumppower.Font = Enum.Font.SciFi
+jumppower.Text = "Jump Power"
+jumppower.TextColor3 = Color3.fromRGB(3, 54, 165)
+jumppower.TextScaled = true
+jumppower.TextSize = 14.000
+jumppower.TextWrapped = true
+jumppower.MouseButton1Down:connect (function()
+	print("Disable on the version V1.0.1.")
+end)
 
-TpClick.Name = "Tp Click"
-TpClick.Parent = ScrollingFrame
-TpClick.BackgroundColor3 = Color3.fromRGB(89, 89, 89)
-TpClick.Position = UDim2.new(0, 0, 0.378787875, 0)
-TpClick.Size = UDim2.new(0, 172, 0, 26)
-TpClick.Font = Enum.Font.SciFi
-TpClick.Text = "Tp Click"
-TpClick.TextColor3 = Color3.fromRGB(3, 54, 165)
-TpClick.TextScaled = true
-TpClick.TextSize = 14.000
-TpClick.TextWrapped = true
+clicktp.Name = "clicktp"
+clicktp.Parent = ScrollingFrame
+clicktp.BackgroundColor3 = Color3.fromRGB(89, 89, 89)
+clicktp.Position = UDim2.new(0, 0, 0.378787875, 0)
+clicktp.Size = UDim2.new(0, 172, 0, 26)
+clicktp.Font = Enum.Font.SciFi
+clicktp.Text = "Tp Click"
+clicktp.TextColor3 = Color3.fromRGB(3, 54, 165)
+clicktp.TextScaled = true
+clicktp.TextSize = 14.000
+clicktp.TextWrapped = true
+clicktp.MouseButton1Down:connect (function()
+	print("Disable on the version V1.0.1.")
+end)
 
-Goto.Name = "Goto"
-Goto.Parent = ScrollingFrame
-Goto.BackgroundColor3 = Color3.fromRGB(89, 89, 89)
-Goto.Position = UDim2.new(0, 0, 0.457575738, 0)
-Goto.Size = UDim2.new(0, 172, 0, 26)
-Goto.Font = Enum.Font.SciFi
-Goto.Text = "Goto"
-Goto.TextColor3 = Color3.fromRGB(3, 54, 165)
-Goto.TextScaled = true
-Goto.TextSize = 14.000
-Goto.TextWrapped = true
+tpto.Name = "tpto"
+tpto.Parent = ScrollingFrame
+tpto.BackgroundColor3 = Color3.fromRGB(89, 89, 89)
+tpto.Position = UDim2.new(0, 0, 0.457575738, 0)
+tpto.Size = UDim2.new(0, 172, 0, 26)
+tpto.Font = Enum.Font.SciFi
+tpto.Text = "Goto"
+tpto.TextColor3 = Color3.fromRGB(3, 54, 165)
+tpto.TextScaled = true
+tpto.TextSize = 14.000
+tpto.TextWrapped = true
+tpto.MouseButton1Down:connect (function()
+	print("Disable on the version V1.0.1.")
+end)
 
 TextLabel.Parent = ScrollingFrame
 TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
@@ -103,14 +122,47 @@ TextLabel.TextScaled = true
 TextLabel.TextSize = 14.000
 TextLabel.TextWrapped = true
 
-KillAll.Name = "Kill All"
-KillAll.Parent = ScrollingFrame
-KillAll.BackgroundColor3 = Color3.fromRGB(89, 89, 89)
-KillAll.Position = UDim2.new(0, 0, 0.536363602, 0)
-KillAll.Size = UDim2.new(0, 172, 0, 26)
-KillAll.Font = Enum.Font.SciFi
-KillAll.Text = "Kill All"
-KillAll.TextColor3 = Color3.fromRGB(3, 54, 165)
-KillAll.TextScaled = true
-KillAll.TextSize = 14.000
-KillAll.TextWrapped = true
+infjump.Name = "infjump"
+infjump.Parent = ScrollingFrame
+infjump.BackgroundColor3 = Color3.fromRGB(89, 89, 89)
+infjump.Position = UDim2.new(0, 0, 0.536363602, 0)
+infjump.Size = UDim2.new(0, 172, 0, 26)
+infjump.Font = Enum.Font.SciFi
+infjump.Text = "Infinite Jump"
+infjump.TextColor3 = Color3.fromRGB(3, 54, 165)
+infjump.TextScaled = true
+infjump.TextSize = 14.000
+infjump.TextWrapped = true
+infjump.MouseButton1Down:connect (function()
+	print("Disable on the version V1.0.1.")
+end)
+
+btools.Name = "btools"
+btools.Parent = ScrollingFrame
+btools.BackgroundColor3 = Color3.fromRGB(89, 89, 89)
+btools.Position = UDim2.new(0, 0, 0.615151465, 0)
+btools.Size = UDim2.new(0, 172, 0, 26)
+btools.Font = Enum.Font.SciFi
+btools.Text = "Btools"
+btools.TextColor3 = Color3.fromRGB(3, 54, 165)
+btools.TextScaled = true
+btools.TextSize = 14.000
+btools.TextWrapped = true
+btools.MouseButton1Down:connect (function()
+	print("Disable on the version V1.0.1.")
+end)
+
+fly.Name = "fly"
+fly.Parent = ScrollingFrame
+fly.BackgroundColor3 = Color3.fromRGB(89, 89, 89)
+fly.Position = UDim2.new(0, 0, 0.693939328, 0)
+fly.Size = UDim2.new(0, 172, 0, 26)
+fly.Font = Enum.Font.SciFi
+fly.Text = "Fly"
+fly.TextColor3 = Color3.fromRGB(3, 54, 165)
+fly.TextScaled = true
+fly.TextSize = 14.000
+fly.TextWrapped = true
+fly.MouseButton1Down:connect (function()
+	print("Disable on the version V1.0.1.")
+end)
